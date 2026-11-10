@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Media Downloader</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+  <header class="top"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg></span><h1>Media Downloader</h1></header>
+  <p class="sub">YouTube, TikTok, Instagram & Pinterest. Paste a link, choose your format, and save.</p>
+
+  <div class="platform-list" aria-label="Supported platforms"><span>YouTube</span><span>TikTok</span><span>Instagram</span><span>Pinterest</span></div>
+  <div class="bar">
+    <div class="field"><input id="url" type="url" placeholder="Paste a YouTube, TikTok, Instagram or Pinterest link" autocomplete="off" aria-label="Media link"></div>
+    <button class="btn" id="paste" type="button">Paste</button>
+    <button class="btn primary" id="go" type="button">Get media</button>
+  </div>
+
+  <details id="cfg" class="cfg">
+    <summary>Download settings</summary>
+    <p class="mute">Optional download proxy, used when the host blocks saving straight from the browser. Use {url} where the file link goes, or end the address with ?url=</p>
+    <input id="prox" type="url" placeholder="https://your-proxy.example.workers.dev/?url={url}" aria-label="Download proxy URL" autocomplete="off">
+  </details>
+
+  <p id="msg" role="status"></p>
+  <section id="out"></section>
+
+  <p class="mute limits">Video: up to 20 minutes · 1080p · 200 MB</p>
+  <p id="backend-status" class="backend-status" role="status">Checking video service…</p>
+  <section id="yt-downloads" aria-label="Your downloads"></section>
+  <details class="cfg"><summary>Supported media</summary><p class="mute">YouTube videos & Shorts; TikTok videos, audio & photos; Instagram public Reels/video posts; Pinterest video Pins. Private posts, account login, Instagram photos and Pinterest image Pins are not supported.</p><p class="mute">Videos prepared by the server expire after 30 minutes. Save them to your device. Availability depends on the source platform.</p></details>
+  <p class="note">Only download content you made or have permission to save. Respect creators and each platform's terms.</p>
+  <p class="credit">This website made by <strong>Zarvions_Z</strong></p>
+</main>
+
+<script defer src="./config.js"></script>
+<script defer src="./tiktok.js"></script>
+<script defer src="./youtube.js"></script>
+</body>
+</html>
